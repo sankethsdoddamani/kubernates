@@ -24,17 +24,21 @@ ADD kubectl TO PATH (IMPORTANT)
 VERIFY kubectl INSTALLATION
   kubectl version
 
-3.AWS-CLI:
+3.AWS-CLI: "all commands run seperately"
+
+   sudo apt install unzip
 
   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
   unzip awscliv2.zip
+
   sudo ./aws/install
 
   aws --version
 
 4.Create the Cluster
 
-  eksctl create cluster --name my-eks-cluster --nodegroup-name my-worker-node --node-type t2.micro --nodes 3 --managed --region us-west-2
+  eksctl create cluster --name my-eks-cluster --nodegroup-name my-worker-node --node-type t3.small --nodes 2 --managed --region us-east-1
 
 5.Delete The cluster
   eksctl delete cluster --name my-eks-cluster --region us-east-1
